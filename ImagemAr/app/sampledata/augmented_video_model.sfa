@@ -4,27 +4,30 @@
       name: 'DefaultMaterial',
       parameters: [
         {
-          baseColor: null,
+          videoTexture: {
+            external_path: 'MISSING_PATH',
+          },
         },
         {
-          baseColorTint: [
-            0.59999999999999998,
-            0.59999999999999998,
-            0.59999999999999998,
-            1,
+          imageSize: [
+            0,
+            0,
           ],
         },
         {
-          metallic: 0,
+          videoSize: [
+            0,
+            0,
+          ],
         },
         {
-          roughness: 1,
+          videoCropEnabled: false,
         },
         {
-          opacity: null,
+          videoAlpha: 0,
         },
       ],
-      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+      source: 'sampledata/augmented_video_material.mat',
     },
   ],
   model: {

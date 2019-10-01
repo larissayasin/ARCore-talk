@@ -5,7 +5,6 @@ import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.Renderable
-import com.shliama.augmentedvideotutorial.VideoScaleType.*
 
 class VideoAnchorNode : AnchorNode() {
 
@@ -30,9 +29,9 @@ class VideoAnchorNode : AnchorNode() {
         videoScaleType: VideoScaleType
     ) {
         videoNode.localScale = when (videoScaleType) {
-            FitXY -> scaleFitXY(imageWidth, imageHeight)
-            CenterCrop -> scaleCenterCrop(videoWidth, videoHeight, imageWidth, imageHeight)
-            CenterInside -> scaleCenterInside(videoWidth, videoHeight, imageWidth, imageHeight)
+            VideoScaleType.FitXY -> scaleFitXY(imageWidth, imageHeight)
+            VideoScaleType.CenterCrop -> scaleCenterCrop(videoWidth, videoHeight, imageWidth, imageHeight)
+            VideoScaleType.CenterInside -> scaleCenterInside(videoWidth, videoHeight, imageWidth, imageHeight)
         }
     }
 

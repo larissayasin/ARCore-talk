@@ -8,7 +8,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 
+/*
 
+Código adaptado de https://github.com/shliama/AugmentedVideoTutorial
+
+ */
 class MainActivity : AppCompatActivity() {
 
     private val openGlVersion by lazy {
@@ -22,7 +26,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (openGlVersion.toDouble() >= MIN_OPEN_GL_VERSION) {
-            supportFragmentManager.inTransaction { replace(R.id.frame_container, ArVideoFragment()) }
+            supportFragmentManager.inTransaction {
+                replace(
+                    R.id.frame_container,
+                    ArVideoFragment()
+                )
+            }
         } else {
             AlertDialog.Builder(this)
                 .setTitle("Device is not supported")

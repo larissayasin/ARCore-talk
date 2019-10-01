@@ -60,6 +60,7 @@ open class ArVideoFragment : ArFragment() {
             try {
                 config.augmentedImageDatabase = AugmentedImageDatabase(session).also { db ->
                     db.addImage(TEST_VIDEO_1, loadAugmentedImageBitmap(TEST_IMAGE_1))
+                    db.addImage(TEST_VIDEO_2, loadAugmentedImageBitmap(TEST_IMAGE_2))
                 }
                 return true
             } catch (e: IllegalArgumentException) {
@@ -211,8 +212,10 @@ open class ArVideoFragment : ArFragment() {
         private const val TAG = "ArVideoFragment"
 
         private const val TEST_IMAGE_1 = "test_image_1.jpg"
+        private const val TEST_IMAGE_2 = "torre.png"
 
         private const val TEST_VIDEO_1 = "test_video_1.mp4"
+        private const val TEST_VIDEO_2 = "bttf.mp4"
 
         private const val VIDEO_CROP_ENABLED = true
 
