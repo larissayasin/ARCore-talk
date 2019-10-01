@@ -15,6 +15,12 @@ import com.google.ar.sceneform.rendering.Renderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
 import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.LinearLayout
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -62,16 +68,26 @@ class MainActivity : AppCompatActivity() {
     private fun initializeGallery() {
         linear_gallery.addView(
             createImageView(
+                R.drawable.couch_icon,
+                "couch",
+                "couch.sfb"
+            )
+        )
+        linear_gallery.addView(
+            createImageView(
                 R.drawable.chair_icon,
                 "chair",
                 "chair.sfb"
             )
         )
+
     }
 
     private fun createImageView(drawable: Int, description: String, uriString: String): ImageView {
         val img = ImageView(this)
         img.setImageResource(drawable)
+//        val layoutParams = LinearLayout.LayoutParams(150, LinearLayout.LayoutParams.MATCH_PARENT)
+//        img.layoutParams = layoutParams
         img.contentDescription = description
         img.setOnClickListener { selectedObject = Uri.parse(uriString) }
         return img
